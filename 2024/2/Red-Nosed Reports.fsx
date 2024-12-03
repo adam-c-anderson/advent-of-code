@@ -23,10 +23,7 @@ module Report =
             List.removeAt i report
     }
 
-    let isSafeDampened report =
-        report
-        |> dampen
-        |> Seq.exists isSafe
+    let isSafeDampened report = report |> dampen |> Seq.exists isSafe
 
 let part1 input =
     input
