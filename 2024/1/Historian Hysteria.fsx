@@ -1,18 +1,13 @@
-open System
+// https://adventofcode.com/2024/day/1
+
 open System.IO
 open System.Text.RegularExpressions
 
 type Tuple =
     static member Map f (a, b) = f (a, b)
 
+let sample = File.ReadAllLines(Path.Join(__SOURCE_DIRECTORY__, "sample.txt"))
 let input = File.ReadAllLines(Path.Join(__SOURCE_DIRECTORY__, "input.txt"))
-
-let sample = (@"3   4
-4   3
-2   5
-1   3
-3   9
-3   3".Split("\n", StringSplitOptions.TrimEntries))
 
 let parseLine (line:string) =
     let m = Regex.Match(line, @"(\d+)\s+(\d+)")
